@@ -91,3 +91,11 @@ To regenerate the README images, serve the app (`npm run build && npm run start`
 - An automated axe check in the Playwright spec and a Lighthouse CI budget.
 - A print stylesheet so the page doubles as a CV when `cv.pdf` is not available.
 - A small "copy email" button with an `aria-live` confirmation.
+
+## Author
+
+**Muhammad Abubaker Siddiq**, Senior Frontend Engineer (React, Next.js, TypeScript)
+
+- GitHub: [@a4abubakar](https://github.com/a4abubakar)
+- Portfolio: https://portfolio-next-six-tau.vercel.app
+- LinkedIn: https://www.linkedin.com/in/muhammad-abubaker-siddiq-27b37615b

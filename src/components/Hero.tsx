@@ -1,5 +1,6 @@
 import { profile } from "@/data/profile";
 import { mailtoHref } from "@/lib/links";
+import { SafeLink } from "@/components/SafeLink";
 
 const primary =
   "inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-accent-contrast transition-colors hover:bg-accent-strong";
@@ -42,6 +43,13 @@ export function Hero() {
           <a href={mailtoHref(profile.email)} className="inline-flex items-center justify-center px-2 py-3 font-medium text-muted underline-offset-4 hover:text-ink hover:underline sm:ml-2">
             {profile.email}
           </a>
+          <SafeLink
+            url={profile.githubUrl}
+            ariaLabel="GitHub profile"
+            className="inline-flex items-center justify-center px-2 py-3 font-medium text-muted underline-offset-4 hover:text-ink hover:underline"
+          >
+            {profile.githubUrl.replace(/^https:\/\//, "")}
+          </SafeLink>
         </div>
 
         <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-4">
