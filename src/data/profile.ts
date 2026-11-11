@@ -24,7 +24,7 @@ export const profile: Profile = {
   headline: "Senior Frontend Engineer",
   tagline: "React, Next.js and TypeScript.",
   location: "Karachi, Pakistan",
-  availability: "Open to roles in Pakistan, UAE/KSA and remote",
+  availability: "Open to new roles",
   email: "abubakarsadiq6727@gmail.com",
   linkedinUrl:
     "https://www.linkedin.com/in/muhammad-abubaker-siddiq-27b37615b",
@@ -43,7 +43,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-next-six-tau.vercel.app",
   title: `${profile.name} | ${profile.title}`,
   description:
-    "Senior Frontend Engineer with 9+ years of experience in React, Next.js and TypeScript. Based in Karachi, open to roles in Pakistan, UAE/KSA and remote.",
+    "Senior Frontend Engineer with 9+ years of experience in React, Next.js and TypeScript. Open to new roles.",
   keywords: [
     "Senior Frontend Engineer",
     "React",
