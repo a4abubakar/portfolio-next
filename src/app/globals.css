@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens. Light is the default; `.dark` is set before first paint by the inline theme script. */
+:root {
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --surface-2: #f3efe9;
+  --ink: #17151c;
+  --muted: #5a5663;
+  --line: #e4ded5;
+  --accent: #b83a0a;
+  --accent-strong: #962d05;
+  --accent-contrast: #ffffff;
+  --accent-soft: #fbe7dc;
+  --focus: #1d4ed8;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0f0e13;
+  --surface: #17161d;
+  --surface-2: #1f1d27;
+  --ink: #f2eff8;
+  --muted: #aaa5b8;
+  --line: #2c2a36;
+  --accent: #fb9a5a;
+  --accent-strong: #ffb27d;
+  --accent-contrast: #1c0e04;
+  --accent-soft: #2a1a10;
+  --focus: #8ab4ff;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html {
+  background: var(--bg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus for every interactive element. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+section[id] {
+  scroll-margin-top: 7.5rem;
+}
+
+@media (min-width: 640px) {
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+/* Soft background glow behind the hero. */
+.hero-glow {
+  background:
+    radial-gradient(40rem 22rem at 85% -10%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
+    radial-gradient(34rem 20rem at -10% 10%, color-mix(in srgb, #0f766e 14%, transparent), transparent 70%);
+}
+
+.dot-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 14%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, #16a34a 55%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 7px transparent;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .rise-2 {
+    animation-delay: 0.08s;
+  }
+  .rise-3 {
+    animation-delay: 0.16s;
+  }
+  .rise-4 {
+    animation-delay: 0.24s;
+  }
+  .pulse-dot {
+    animation: pulse-dot 2.4s ease-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
