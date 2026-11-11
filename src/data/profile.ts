@@ -28,7 +28,7 @@ export const profile: Profile = {
   email: "abubakarsadiq6727@gmail.com",
   linkedinUrl:
     "https://www.linkedin.com/in/muhammad-abubaker-siddiq-27b37615b",
-  githubUrl: "https://github.com/TODO",
+  githubUrl: "https://github.com/a4abubakar",
   cvPath: "/cv.pdf",
   stats: [
     { value: "9+", label: "years building for the web" },
@@ -40,7 +40,7 @@ export const profile: Profile = {
 
 export const siteConfig = {
   /** Set NEXT_PUBLIC_SITE_URL when you deploy; the fallback is the local dev server. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-next-six-tau.vercel.app",
   title: `${profile.name} | ${profile.title}`,
   description:
     "Senior Frontend Engineer with 9+ years of experience in React, Next.js and TypeScript. Based in Karachi, open to roles in Pakistan, UAE/KSA and remote.",

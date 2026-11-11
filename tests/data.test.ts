@@ -29,11 +29,11 @@ describe("content data", () => {
 });
 
 describe("Person JSON-LD", () => {
-  it("describes the owner and omits placeholder profile links", () => {
+  it("describes the owner and lists real profile links", () => {
     const data = buildPersonJsonLd();
     expect(data["@type"]).toBe("Person");
     expect(data.name).toBe("Muhammad Abubaker Siddiq");
-    expect(data.sameAs).toEqual([profile.linkedinUrl]);
+    expect(data.sameAs).toEqual([profile.linkedinUrl, profile.githubUrl]);
     expect(data.address.addressLocality).toBe("Karachi");
   });
 

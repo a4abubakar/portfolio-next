@@ -7,8 +7,8 @@ A fast, statically rendered personal portfolio for a Senior Frontend Engineer (R
 | **Desktop** | ![Desktop, light](docs/screenshots/desktop-light.png) | ![Desktop, dark](docs/screenshots/desktop-dark.png) |
 | **Mobile (390px)** | ![Mobile, light](docs/screenshots/mobile-light.png) | ![Mobile, dark](docs/screenshots/mobile-dark.png) |
 
-- Live demo: `TODO`
-- GitHub: `TODO`
+- Live demo: https://portfolio-next-six-tau.vercel.app
+- GitHub: https://github.com/a4abubakar/portfolio-next
 
 ## Features
 
