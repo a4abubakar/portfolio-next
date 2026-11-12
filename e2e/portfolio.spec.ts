@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { projects } from "../src/data/projects";
+import { clientProjects } from "../src/data/clients";
 
 test.describe("portfolio", () => {
   test("loads with the headline, landmarks and metadata", async ({ page }) => {
@@ -79,12 +80,32 @@ test.describe("portfolio", () => {
     }
   });
 
+  test("client work lists every production site with a working image and link", async ({ page }) => {
+    await page.goto("/");
+    const region = page.getByRole("region", { name: "Client work" });
+    await region.scrollIntoViewIfNeeded();
+    const cards = region.getByTestId("client-card");
+    await expect(cards).toHaveCount(clientProjects.length);
+    for (const client of clientProjects) {
+      const card = region.getByRole("article", { name: client.name });
+      await expect(card.getByRole("link", { name: `Visit ${client.name}` })).toHaveAttribute("href", client.url);
+      if (client.image) {
+        const img = card.getByRole("img");
+        await img.scrollIntoViewIfNeeded();
+        await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
+      }
+    }
+  });
+
   test("contact links and CV download are wired up", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByRole("link", { name: "Download CV" })).toHaveAttribute("href", "/cv.pdf");
     const contact = page.locator("#contact");
     await expect(contact.locator('a[href^="mailto:abubakarsadiq6727@gmail.com"]')).toBeVisible();
     await expect(contact.locator('a[href*="linkedin.com/in/muhammad-abubaker-siddiq"]')).toBeVisible();
+    await expect(contact.locator('a[href="https://github.com/a4abubakar"]')).toContainText("@a4abubakar");
+    await expect(contact.locator('a[href="tel:+923433358774"]')).toBeVisible();
+    await expect(contact.locator('a[href*="facebook.com/"]')).toBeVisible();
   });
 
   test("has no horizontal scroll on a 360px phone", async ({ page }) => {

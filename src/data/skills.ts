@@ -15,13 +15,15 @@ export const skillGroups: SkillGroup[] = [
       "TypeScript",
       "JavaScript",
       "Redux",
-      "Context",
+      "Context API",
+      "HTML5",
+      "CSS3",
     ],
   },
   {
     id: "styling",
     title: "Styling",
-    items: ["Tailwind CSS", "MUI", "Ant Design", "Styled Components", "Design systems", "WCAG"],
+    items: ["Tailwind CSS", "MUI", "Ant Design", "Bootstrap", "Styled Components", "Design systems", "WCAG"],
   },
   {
     id: "email",
@@ -40,7 +42,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "quality",
     title: "Quality",
-    items: ["Vitest", "Playwright", "Cypress", "Core Web Vitals", "SEO"],
+    items: ["Vitest", "Jest", "Playwright", "Cypress", "Core Web Vitals", "SEO"],
   },
   {
     id: "ai",

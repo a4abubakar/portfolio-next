@@ -1,6 +1,7 @@
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeading } from "@/components/SectionHeading";
+import { ClientWork } from "@/components/ClientWork";
 
 export function ProjectsSection() {
   return (
@@ -20,6 +21,7 @@ export function ProjectsSection() {
           ))}
         </div>
       )}
+      <ClientWork />
     </section>
   );
 }

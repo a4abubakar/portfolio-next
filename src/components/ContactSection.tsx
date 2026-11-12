@@ -54,7 +54,25 @@ export function ContactSection() {
             <SafeLink url={profile.githubUrl} pendingLabel="GitHub link coming soon" className={rowActive} pendingClassName={rowPending} ariaLabel="GitHub profile">
               <span>
                 <span className="block text-xs uppercase tracking-widest text-muted">GitHub</span>
-                <span className="block font-medium">Coming soon</span>
+                <span className="block font-medium">@{profile.githubUrl.split("/").pop()}</span>
+              </span>
+              <Arrow />
+            </SafeLink>
+          </li>
+          <li>
+            <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className={rowActive}>
+              <span>
+                <span className="block text-xs uppercase tracking-widest text-muted">Phone</span>
+                <span className="block font-medium">{profile.phone}</span>
+              </span>
+              <Arrow />
+            </a>
+          </li>
+          <li>
+            <SafeLink url={profile.facebookUrl} className={rowActive} ariaLabel="Facebook profile">
+              <span>
+                <span className="block text-xs uppercase tracking-widest text-muted">Facebook</span>
+                <span className="block font-medium">Muhammad Abubaker Siddiq</span>
               </span>
               <Arrow />
             </SafeLink>

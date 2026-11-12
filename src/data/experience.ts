@@ -42,7 +42,8 @@ export const experience: Experience[] = [
     highlights: [
       "Built component libraries and set coding standards across React, Next.js, React Native, TypeScript, Tailwind and Ant Design.",
       "Turned Figma and XD designs into pixel-perfect interfaces.",
-      "Ran code reviews and mentored engineers.",
+      "Worked with designers on clean interfaces and simple, intuitive interactions, and managed large, complex design projects for corporate clients.",
+      "Ran code reviews, mentored engineers and coordinated releases with clients.",
     ],
     tech: ["React", "Next.js", "React Native", "TypeScript", "Tailwind CSS", "Ant Design"],
   },
@@ -67,8 +68,11 @@ export const experience: Experience[] = [
     start: "2021-01",
     end: "2022-01",
     summary: "React, Next.js and React Native applications.",
-    highlights: [],
-    tech: ["React", "Next.js", "React Native"],
+    highlights: [
+      "Built front ends for public-facing and internal websites, plus back-end server code.",
+      "Ran quality assurance tests to find errors early and improve usability.",
+    ],
+    tech: ["React", "Next.js", "React Native", "Tailwind CSS", "Bootstrap", "MUI", "Unit testing"],
   },
   {
     id: "fine-solutions",
@@ -81,8 +85,10 @@ export const experience: Experience[] = [
     highlights: [
       "Built interfaces with React, React Native, MUI and Ant Design.",
       "Worked on REST services in Python and Flask.",
+      "Tested React components with Jest; pair-programmed and reviewed teammates' code to catch missed errors.",
+      "Worked in an Agile team: weekly stand-ups, sprint planning and retrospectives, user stories and bugs tracked in GitHub Projects.",
     ],
-    tech: ["React", "React Native", "MUI", "Ant Design", "Python", "Flask"],
+    tech: ["React", "React Native", "MUI", "Ant Design", "Bootstrap", "Jest", "Python", "Flask"],
   },
   {
     id: "saylani",
@@ -92,7 +98,11 @@ export const experience: Experience[] = [
     start: "2017-01",
     end: "2019-10",
     summary: "Built e-commerce frontends.",
-    highlights: [],
-    tech: [],
+    highlights: [
+      "Created and maintained front-end code for multiple e-commerce websites.",
+      "Helped produce and deploy marketing campaigns, including advertisements.",
+      "Built dynamic web solutions in line with company standards and best practices.",
+    ],
+    tech: ["React", "React Native", "Bootstrap", "MUI", "Ant Design"],
   },
 ];

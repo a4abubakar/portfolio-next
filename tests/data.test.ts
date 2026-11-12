@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { projects } from "@/data/projects";
 import { skillGroups } from "@/data/skills";
 import { profile } from "@/data/profile";
+import { clientProjects } from "@/data/clients";
 import { buildPersonJsonLd, serializeJsonLd } from "@/lib/jsonld";
 
 describe("content data", () => {
@@ -22,9 +23,22 @@ describe("content data", () => {
     }
   });
 
-  it("never exposes a phone number in the profile", () => {
-    expect(Object.keys(profile).some((key) => /phone|tel|mobile/i.test(key))).toBe(false);
-    expect(JSON.stringify(profile)).not.toMatch(/\+?\d[\d\s-]{8,}\d/);
+  it("lists a dialable phone number and real profile links", () => {
+    expect(profile.phone).toMatch(/^\+\d[\d ]{8,}\d$/);
+    for (const url of [profile.linkedinUrl, profile.githubUrl, profile.facebookUrl]) {
+      expect(url).toMatch(/^https:\/\//);
+    }
+  });
+
+  it("has unique client projects with https links and a screenshot or fallback colours", () => {
+    const slugs = clientProjects.map((c) => c.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+    expect(clientProjects).toHaveLength(6);
+    for (const client of clientProjects) {
+      expect(client.url).toMatch(/^https:\/\//);
+      expect(client.summary.length).toBeGreaterThan(20);
+      expect(client.image ?? client.colors.from).toBeTruthy();
+    }
   });
 });
 

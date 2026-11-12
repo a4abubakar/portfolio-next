@@ -8,6 +8,9 @@ export interface Profile {
   location: string;
   availability: string;
   email: string;
+  /** Shown in Contact as a tel: link (it was public on the previous portfolio too). */
+  phone: string;
+  facebookUrl: string;
   linkedinUrl: string;
   /** `TODO` placeholders are rendered as "coming soon" instead of dead links. */
   githubUrl: string;
@@ -26,6 +29,8 @@ export const profile: Profile = {
   location: "Karachi, Pakistan",
   availability: "Open to new roles",
   email: "abubakarsadiq6727@gmail.com",
+  phone: "+92 343 3358774",
+  facebookUrl: "https://facebook.com/MuhammadAubakerSiddiq",
   linkedinUrl:
     "https://www.linkedin.com/in/muhammad-abubaker-siddiq-27b37615b",
   githubUrl: "https://github.com/a4abubakar",
