@@ -10,11 +10,31 @@ export interface ClientProject {
   summary: string;
   url: string;
   image?: string;
+  /** What I built there, shown as bullets under the summary. */
+  highlights?: string[];
+  tech?: string[];
   /** Colours for the fallback card when there is no screenshot. */
   colors: { from: string; to: string };
 }
 
 export const clientProjects: ClientProject[] = [
+  {
+    slug: "insurancemarket",
+    name: "InsuranceMarket.ae",
+    category: "Insurance comparison platform",
+    summary:
+      "A UAE platform where customers compare and buy car, health, home, life, travel, pet, bike and yacht insurance.",
+    url: "https://insurancemarket.ae/",
+    image: "/clients/insurancemarket.jpg",
+    highlights: [
+      "Customer-facing comparison and quote journeys in Next.js, React and TypeScript, focused on page speed, SEO and a smooth quote-to-purchase flow.",
+      "300+ responsive email templates (Maizzle, Tailwind CSS, Liquid) for WebEngage journeys, 170+ of them renewal reminders, built on a 45-component shared library.",
+      "Emails delivered through WebEngage, Brevo, Postmark and Bird, tested across Gmail, Outlook and Apple Mail in light and dark mode.",
+      "AI agents and Claude/MCP tools that take ClickUp tasks to GitHub branches and pull requests.",
+    ],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Maizzle", "Liquid", "WebEngage"],
+    colors: { from: "#ea580c", to: "#fb923c" },
+  },
   {
     slug: "my2cents",
     name: "my2cents",

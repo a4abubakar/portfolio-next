@@ -41,6 +41,25 @@ function ClientCard({ client }: { client: ClientProject }) {
             {client.name}
           </h4>
           <p className="mt-2 text-sm text-muted">{client.summary}</p>
+          {client.highlights && client.highlights.length > 0 && (
+            <ul className="mt-3 space-y-2 text-sm">
+              {client.highlights.map((item) => (
+                <li key={item} className="flex gap-2.5">
+                  <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {client.tech && client.tech.length > 0 && (
+            <ul aria-label="Technologies" className="mt-4 flex flex-wrap gap-1.5">
+              {client.tech.map((tech) => (
+                <li key={tech} className="rounded-md bg-surface-2 px-2 py-1 font-mono text-xs text-muted">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          )}
           <a
             href={client.url}
             target="_blank"
@@ -67,7 +86,7 @@ export function ClientWork() {
         Client work
       </h3>
       <p className="mt-3 max-w-2xl text-muted">
-        Live websites and apps I worked on for clients and employers, from social and fintech platforms to education.
+        Live websites and apps I worked on for clients and employers, from insurance, social and fintech platforms to education.
       </p>
       <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {clientProjects.map((client) => (

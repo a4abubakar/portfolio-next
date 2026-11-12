@@ -33,7 +33,8 @@ describe("content data", () => {
   it("has unique client projects with https links and a screenshot or fallback colours", () => {
     const slugs = clientProjects.map((c) => c.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
-    expect(clientProjects).toHaveLength(6);
+    expect(clientProjects).toHaveLength(7);
+    expect(clientProjects[0].slug).toBe("insurancemarket");
     for (const client of clientProjects) {
       expect(client.url).toMatch(/^https:\/\//);
       expect(client.summary.length).toBeGreaterThan(20);
