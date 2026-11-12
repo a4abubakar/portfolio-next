@@ -7,19 +7,23 @@ function hostname(url: string): string {
 
 function ClientCard({ client }: { client: ClientProject }) {
   const headingId = `client-${client.slug}`;
+  // Clients with detailed highlights get a full-width card, screenshot beside the text on large screens.
+  const featured = Boolean(client.highlights?.length);
   return (
-    <li data-testid="client-card">
+    <li data-testid="client-card" className={featured ? "sm:col-span-2 lg:col-span-3" : undefined}>
       <article
         aria-labelledby={headingId}
-        className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow hover:shadow-lg"
+        className={`flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow hover:shadow-lg ${featured ? "lg:flex-row" : ""}`}
       >
-        <div className="relative aspect-[16/10] overflow-hidden bg-surface-2">
+        <div
+          className={`relative aspect-[16/10] overflow-hidden bg-surface-2 ${featured ? "lg:aspect-auto lg:min-h-full lg:w-1/2 lg:shrink-0" : ""}`}
+        >
           {client.image ? (
             <Image
               src={client.image}
               alt={`Screenshot of the ${client.name} website`}
               fill
-              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              sizes={featured ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
               className="object-cover object-top"
             />
           ) : (
