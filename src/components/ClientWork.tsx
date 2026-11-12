@@ -24,7 +24,7 @@ function ClientCard({ client }: { client: ClientProject }) {
               alt={`Screenshot of the ${client.name} website`}
               fill
               sizes={featured ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
-              className="object-cover object-top"
+              className={`object-cover ${featured ? "object-left-top" : "object-top"}`}
             />
           ) : (
             <div
