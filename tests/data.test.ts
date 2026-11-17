@@ -25,7 +25,7 @@ describe("content data", () => {
 
   it("lists a dialable phone number and real profile links", () => {
     expect(profile.phone).toMatch(/^\+\d[\d ]{8,}\d$/);
-    for (const url of [profile.linkedinUrl, profile.githubUrl, profile.facebookUrl]) {
+    for (const url of [profile.linkedinUrl, profile.githubUrl]) {
       expect(url).toMatch(/^https:\/\//);
     }
   });

@@ -68,15 +68,6 @@ export function ContactSection() {
               <Arrow />
             </a>
           </li>
-          <li>
-            <SafeLink url={profile.facebookUrl} className={rowActive} ariaLabel="Facebook profile">
-              <span>
-                <span className="block text-xs uppercase tracking-widest text-muted">Facebook</span>
-                <span className="block font-medium">Muhammad Abubaker Siddiq</span>
-              </span>
-              <Arrow />
-            </SafeLink>
-          </li>
         </ul>
       </div>
     </section>

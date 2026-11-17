@@ -128,7 +128,7 @@ test.describe("portfolio", () => {
     await expect(contact.locator('a[href*="linkedin.com/in/muhammad-abubaker-siddiq"]')).toBeVisible();
     await expect(contact.locator('a[href="https://github.com/a4abubakar"]')).toContainText("@a4abubakar");
     await expect(contact.locator('a[href="tel:+923433358774"]')).toBeVisible();
-    await expect(contact.locator('a[href*="facebook.com/"]')).toBeVisible();
+    await expect(page.locator('a[href*="facebook.com"]')).toHaveCount(0);
   });
 
   test("has no horizontal scroll on a 360px phone", async ({ page }) => {
