@@ -7,7 +7,7 @@ test.describe("portfolio", () => {
   test("loads with the headline, landmarks and metadata", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Muhammad Abubaker Siddiq/);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Senior Frontend Engineer");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Senior Software Engineer");
     await expect(page.getByRole("banner")).toBeVisible();
     await expect(page.getByRole("main")).toBeVisible();
     await expect(page.getByRole("contentinfo")).toBeVisible();

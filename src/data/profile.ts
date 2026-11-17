@@ -23,7 +23,7 @@ export const profile: Profile = {
   shortName: "Abubaker",
   initials: "AS",
   title: "Senior Frontend Engineer",
-  headline: "Senior Frontend Engineer",
+  headline: "Senior Software Engineer",
   tagline: "React, Next.js and TypeScript.",
   location: "Karachi, Pakistan",
   availability: "Open to new roles",
