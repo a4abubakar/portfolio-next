@@ -22,7 +22,7 @@ export const profile: Profile = {
   name: "Muhammad Abubaker Siddiq",
   shortName: "Abubaker",
   initials: "AS",
-  title: "Senior Frontend Engineer",
+  title: "Senior Software Engineer",
   headline: "Senior Software Engineer",
   tagline: "React, Next.js and TypeScript.",
   location: "Karachi, Pakistan",
@@ -46,9 +46,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-next-six-tau.vercel.app",
   title: `${profile.name} | ${profile.title}`,
   description:
-    "Senior Frontend Engineer with 9+ years of experience in React, Next.js and TypeScript. Open to new roles.",
+    "Senior Software Engineer with 9+ years of experience in React, Next.js and TypeScript. Open to new roles.",
   keywords: [
-    "Senior Frontend Engineer",
+    "Senior Software Engineer",
+    "Frontend Engineer",
     "React",
     "Next.js",
     "TypeScript",
