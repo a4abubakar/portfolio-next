@@ -24,7 +24,8 @@ export const profile: Profile = {
   initials: "AS",
   title: "Senior Software Engineer",
   headline: "Senior Software Engineer",
-  tagline: "React, Next.js and TypeScript.",
+  // Non-breaking space keeps "React Native" on one line in the large headline.
+  tagline: "React, Next.js, React Native and TypeScript.",
   location: "Karachi, Pakistan",
   availability: "Open to new roles",
   email: "abubakarsadiq6727@gmail.com",
@@ -46,12 +47,13 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-next-six-tau.vercel.app",
   title: `${profile.name} | ${profile.title}`,
   description:
-    "Senior Software Engineer with 9+ years of experience in React, Next.js and TypeScript. Open to new roles.",
+    "Senior Software Engineer with 9+ years of experience in React, Next.js, React Native and TypeScript. Open to new roles.",
   keywords: [
     "Senior Software Engineer",
     "Frontend Engineer",
     "React",
     "Next.js",
+    "React Native",
     "TypeScript",
     "Tailwind CSS",
     "HTML email",

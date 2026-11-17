@@ -45,7 +45,7 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 40, color: "#fb9a5a", marginBottom: 12 }}>{profile.name}</div>
           <div style={{ fontSize: 84, fontWeight: 700, lineHeight: 1.05 }}>{profile.title}</div>
-          <div style={{ fontSize: 40, color: "#aaa5b8", marginTop: 20 }}>React · Next.js · TypeScript</div>
+          <div style={{ fontSize: 40, color: "#aaa5b8", marginTop: 20 }}>React · Next.js · React Native · TypeScript</div>
         </div>
 
         <div style={{ fontSize: 28, color: "#aaa5b8" }}>{profile.availability}</div>

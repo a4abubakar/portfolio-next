@@ -17,16 +17,16 @@ export function Hero() {
           {profile.availability}
         </p>
 
-        <h1 id="hero-title" className="rise rise-2 mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+        <h1 id="hero-title" className="rise rise-2 mt-6 max-w-6xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
           <span className="block text-xl font-medium tracking-normal text-muted sm:text-2xl">{profile.name}</span>
           <span className="mt-3 block">
             {profile.headline}.{" "}
-            <span className="text-accent">{profile.tagline}</span>
+            <span className="text-accent sm:block sm:text-balance">{profile.tagline}</span>
           </span>
         </h1>
 
         <p className="rise rise-3 mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          I build fast, accessible interfaces and the systems behind them, from insurance quote journeys to a
+          I build fast, accessible web and mobile interfaces and the systems behind them, from insurance quote journeys to a
           production email platform. Based in {profile.location}.
         </p>
 
