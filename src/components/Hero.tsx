@@ -26,8 +26,8 @@ export function Hero() {
         </h1>
 
         <p className="rise rise-3 mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          I build fast, accessible web and mobile interfaces and the systems behind them, from insurance quote journeys to a
-          production email platform. Based in {profile.location}.
+          I build fast, accessible web and mobile products and the systems behind them, from the first design to
+          production. Based in {profile.location}.
         </p>
 
         <div className="rise rise-4 mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
