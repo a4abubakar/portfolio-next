@@ -55,6 +55,8 @@ export const siteConfig = {
     "Next.js",
     "React Native",
     "TypeScript",
+    "Node.js",
+    "PostgreSQL",
     "Tailwind CSS",
     "HTML email",
     "Maizzle",

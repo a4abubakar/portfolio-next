@@ -21,6 +21,11 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
+    id: "backend",
+    title: "Backend & databases",
+    items: ["Node.js", "REST APIs", "Python", "Flask", "Firebase", "MySQL", "PostgreSQL", "NoSQL databases"],
+  },
+  {
     id: "styling",
     title: "Styling",
     items: ["Tailwind CSS", "MUI", "Ant Design", "Bootstrap", "Styled Components", "Design systems", "WCAG"],
@@ -51,7 +56,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "other",
-    title: "Other",
-    items: ["REST", "Python/Flask", "Firebase", "SharePoint SPFx", "Git", "Figma"],
+    title: "Tools & platforms",
+    items: ["Git", "GitHub", "Vercel", "SharePoint SPFx", "Figma", "Adobe XD", "Agile/Scrum"],
   },
 ];

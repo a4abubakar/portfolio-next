@@ -22,7 +22,7 @@ dark mode, accessible, with SEO metadata and a generated Open Graph image.
 | AI engineering | AI agents (Claude + MCP) that take ClickUp tasks to GitHub pull requests, Claude plugins and skills for the email workflow, and AI-assisted development across the team |
 | GitHub activity | Contribution calendar for the last 12 months, refreshed daily |
 | Experience | Timeline of six roles (2017 to present) and education |
-| Skills | Six groups: frontend, styling, email engineering, quality, AI and automation, other |
+| Skills | Seven groups: frontend, backend and databases, styling, email engineering, quality, AI and automation, tools and platforms |
 | Contact | Email, LinkedIn, GitHub and phone; CV at `/cv.pdf` |
 
 ![Client work](docs/screenshots/section-client-work.png)
