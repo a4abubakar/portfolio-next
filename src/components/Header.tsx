@@ -6,6 +6,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const NAV_ITEMS = [
   { id: "projects", label: "Projects" },
+  { id: "ai", label: "AI" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
@@ -47,7 +48,7 @@ export function Header() {
               key={item.id}
               href={`#${item.id}`}
               aria-current={active === item.id ? "location" : undefined}
-              className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-ink aria-[current=location]:bg-accent-soft aria-[current=location]:text-accent"
+              className="rounded-full px-2 py-2 text-sm font-medium text-muted sm:px-3 transition-colors hover:text-ink aria-[current=location]:bg-accent-soft aria-[current=location]:text-accent"
             >
               {item.label}
             </a>

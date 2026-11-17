@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { projects } from "../src/data/projects";
 import { clientProjects } from "../src/data/clients";
+import { aiWork } from "../src/data/ai";
 
 test.describe("portfolio", () => {
   test("loads with the headline, landmarks and metadata", async ({ page }) => {
@@ -21,6 +22,7 @@ test.describe("portfolio", () => {
     const nav = page.getByRole("navigation", { name: "Primary" });
     for (const [label, id] of [
       ["Projects", "projects"],
+      ["AI", "ai"],
       ["Experience", "experience"],
       ["Skills", "skills"],
       ["Contact", "contact"],
@@ -28,6 +30,27 @@ test.describe("portfolio", () => {
       await nav.getByRole("link", { name: label }).click();
       await expect(page).toHaveURL(new RegExp(`#${id}$`));
       await expect(page.locator(`#${id}`)).toBeInViewport({ ratio: 0.1 });
+    }
+  });
+
+  test("AI section lists the AI work and the GitHub chart renders", async ({ page }) => {
+    await page.goto("/");
+    const ai = page.locator("#ai");
+    await expect(ai.getByRole("heading", { level: 2, name: "AI engineering" })).toBeVisible();
+    await expect(ai.getByTestId("ai-card")).toHaveCount(aiWork.length);
+    for (const item of aiWork) {
+      await expect(ai.getByRole("article", { name: item.title })).toBeVisible();
+    }
+
+    const activity = page.locator("#activity");
+    await expect(activity.getByRole("link", { name: "View GitHub profile" })).toHaveAttribute("href", "https://github.com/a4abubakar");
+    // Either the chart (normal case) or the plain GitHub link if the data source is down.
+    const chart = activity.getByTestId("github-chart");
+    if (await chart.count()) {
+      await expect(chart.getByRole("img")).toHaveAttribute("aria-label", /contributions? in the last year/);
+      expect(await chart.locator("rect[data-level]").count()).toBeGreaterThan(300);
+    } else {
+      await expect(activity.getByText("The activity chart is unavailable right now")).toBeVisible();
     }
   });
 
